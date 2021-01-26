@@ -27,6 +27,8 @@ struct Home: View {
                                 GridItem(.flexible(),spacing : 15), count: 3), spacing : 15){
                 ForEach(0..<9, id: \.self) { index in
                     Color.red
+                        .frame(width:getWidth() , height: getWidth())
+                        .cornerRadius(15)
                 }
             }
             
@@ -34,6 +36,13 @@ struct Home: View {
         
         }
     }
+    
+    // used to calculate width
+    
+    func getWidth() -> CGFloat {
+        let width = UIScreen.main.bounds.width - (30 + 30)
+        
+        return width / 3
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -41,3 +50,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+}
+
